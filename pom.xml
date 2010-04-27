@@ -6,7 +6,22 @@
 	<packaging>jar</packaging>
 	<version>0.1</version>
 	<name>service</name>
-	<url>http://maven.apache.org</url>
+	<url>http://www.itx.ru</url>
+	<developers>
+		<developer>
+			<id>enp</id>
+			<name>Eugene Prokopiev</name>
+			<email>enp@itx.ru</email>
+			<url>http://www.itx.ru</url>
+		</developer>
+	</developers>
+	<licenses>
+		<license>
+			<name>Apache 2</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 	<build>
 		<plugins>
 			<plugin>
