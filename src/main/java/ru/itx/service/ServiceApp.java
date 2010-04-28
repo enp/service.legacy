@@ -18,23 +18,35 @@ package ru.itx.service;
 
 import org.apache.commons.daemon.Daemon;
 import org.apache.commons.daemon.DaemonContext;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class ServiceApp implements Daemon {
 
-	private Log log = LogFactory.getLog(getClass());
+	private AbstractApplicationContext context;
+	private String[] contextFiles;
+
+	public ServiceApp() {
+		this.contextFiles = new String []{"context.xml"};
+	}
+
+	public ServiceApp(String[] contextFiles) {
+		if (contextFiles.length > 0)
+			this.contextFiles = contextFiles;
+		else
+		this.contextFiles = new String []{"context.xml"};
+	}
 
 	public void init(DaemonContext context) {}
 
 	public void destroy() {}
 
 	public void start() {
-		log.debug("start");
+		context = new ClassPathXmlApplicationContext(contextFiles);
 	}
 
 	public void stop() {
-		log.debug("stop");
+		context.close();
 	}
 
 	public static void main(String[] args) throws Exception {
