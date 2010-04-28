@@ -28,6 +28,16 @@
 			<artifactId>commons-daemon</artifactId>
 			<version>1.0.1</version>
 		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.14</version>
+		</dependency>
 	</dependencies>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -49,6 +59,9 @@
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
 						</manifest>
+						<manifestEntries>
+							<Class-Path>conf/</Class-Path>
+						</manifestEntries>
 					</archive>
 				</configuration>
 			</plugin>

@@ -26,5 +26,9 @@ xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assemb
 				<include>*.jar</include>
 			</includes>
 		</fileSet>
+		<fileSet>
+			<directory>src/main/conf</directory>
+			<outputDirectory>conf</outputDirectory>
+		</fileSet>
 	</fileSets>
 </assembly>

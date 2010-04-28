@@ -18,19 +18,23 @@ package ru.itx.service;
 
 import org.apache.commons.daemon.Daemon;
 import org.apache.commons.daemon.DaemonContext;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class ServiceApp implements Daemon {
+
+	private Log log = LogFactory.getLog(getClass());
 
 	public void init(DaemonContext context) {}
 
 	public void destroy() {}
 
 	public void start() {
-		System.out.println("start");
+		log.debug("start");
 	}
 
 	public void stop() {
-		System.out.println("stop");
+		log.debug("stop");
 	}
 
 	public static void main(String[] args) throws Exception {
